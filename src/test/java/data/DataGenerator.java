@@ -15,8 +15,6 @@ public class DataGenerator {
     }
 
     public static String generateCity(String locale) {
-        //Faker faker = new Faker(new Locale(locale));
-        //String city = faker.address().city();
         String[] cities = {"Москва", "Казань", "Самара", "Хабаровск", "Махачкала", "Новосибирск", "Санкт-Петербург"};
         Random index = new Random();
         int indexInt = index.nextInt(cities.length);
@@ -35,5 +33,4 @@ public class DataGenerator {
         String phone = faker.phoneNumber().phoneNumber();
         return phone;
     }
-
 }

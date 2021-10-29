@@ -13,7 +13,6 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 
 public class ChangeOfTimeTest {
@@ -60,8 +59,8 @@ public class ChangeOfTimeTest {
         // Запланировать
         $(Selectors.byText("Запланировать")).click();
         // Всплывающее окно "Необходимо подтверждение"
-        //$("[data-test-id=replan-notification]").find(Selectors.byCssSelector("notification__title")).shouldHave(exactText("Необходимо подтверждение"));
-        //$("[data-test-id=replan-notification] .notification__title").shouldHave(exactText("У вас уже запланирована встреча на другую дату. Перепланировать?"));
+        $(Selectors.withText("Необходимо подтверждение")).shouldBe(visible);
+        $(Selectors.withText("У вас уже запланирована встреча на другую дату. Перепланировать?")).shouldBe(visible);
         // Кликнуть на кнопку "Перепланировать"
         $(Selectors.byText("Перепланировать")).click();
         // Повторное всплывающее окно успешно
